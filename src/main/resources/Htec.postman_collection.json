@@ -1,0 +1,862 @@
+{
+	"info": {
+		"_postman_id": "5cd85c33-18cb-47a2-8663-94764326477b",
+		"name": "Htec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonDATA = pm.response.json()\r",
+							"pm.collectionVariables.set(\"TOKEN\", jsonDATA.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/login"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=H0s4aHQk72X8E5eJAA8-"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"nikola_nikolik@hotmail.com\",\r\n    \"password\": \"Test123!\"\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/login",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET testcases",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"TEst\",\"description\":\"test\",\"expected_result\":\"test\",\"test_steps\":[{\"id\":1,\"value\":\"test\"},{\"id\":2,\"value\":\"test\"}],\"automated\":false}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST testcase Scenario 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send a valid request\",\r\n    \"description\": \"The purpose of this test is to validate if we send a valid request we can login on the Page\",\r\n    \"expected_result\": \"User can successfully login on the page\",\r\n    \"automated\": true,\r\n    \"test_steps\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"value\": \"Go to qa-sandbox.ni.htec.rs/login\"\r\n        },\r\n                {\r\n            \"id\": \"2\",\r\n            \"value\": \"Enter a valid email\"\r\n        },\r\n                {\r\n            \"id\": \"3\",\r\n            \"value\": \"Enter a valid password\"\r\n        },\r\n        {\r\n            \"id\": \"4\",\r\n            \"value\": \"Click on login button\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT edit testcase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/edit-testcase/1708"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=kPoG2e3CB65wCmxBAA9w"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"TEst\",\"description\":\"test\",\"expected_result\":\"test\",\"test_steps\":[{\"id\":12192,\"value\":\"test\"},{\"id\":12193,\"value\":\"test\"},{\"id\":12194,\"value\":\"test\"}],\"automated\":false,\"candidate_scenario_id\":297,\"testcaseId\":1708}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases/1708",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases",
+						"1708"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete test case",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/edit-testcase/1708"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=kPoG2e3CB65wCmxBAA9w"
+					}
+				],
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases/1965",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases",
+						"1965"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST testcase Scenario 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send a invalid request with wrong email\",\r\n    \"description\": \"The purpose of this test is to validate if we send an invalid request with wrong email we cannot login on the Page\",\r\n    \"expected_result\": \"User can't login on the page and an error will be shown\",\r\n    \"automated\": true,\r\n    \"test_steps\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"value\": \"Go to qa-sandbox.ni.htec.rs/login\"\r\n        },\r\n                {\r\n            \"id\": \"2\",\r\n            \"value\": \"Enter a invalid email (without @)\"\r\n        },\r\n                {\r\n            \"id\": \"3\",\r\n            \"value\": \"Enter a valid password\"\r\n        },\r\n        {\r\n            \"id\": \"4\",\r\n            \"value\": \"Click on login button\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST testcase Scenario 3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send a invalid request with wrong password\",\r\n    \"description\": \"The purpose of this test is to validate if we send an invalid request with wrong password we cannot login on the Page\",\r\n    \"expected_result\": \"User can't login on the page and an error will be shown\",\r\n    \"automated\": true,\r\n    \"test_steps\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"value\": \"Go to qa-sandbox.ni.htec.rs/login\"\r\n        },\r\n                {\r\n            \"id\": \"2\",\r\n            \"value\": \"Enter a valid email\"\r\n        },\r\n                {\r\n            \"id\": \"3\",\r\n            \"value\": \"Enter a wrong password\"\r\n        },\r\n        {\r\n            \"id\": \"4\",\r\n            \"value\": \"Click on login button\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST testcase Scenario 4",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send a invalid request with empty password\",\r\n    \"description\": \"The purpose of this test is to validate if we send an invalid request with wrong password we cannot login on the Page\",\r\n    \"expected_result\": \"User can't login on the page and an error will be shown (Password is required)\",\r\n    \"automated\": true,\r\n    \"test_steps\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"value\": \"Go to qa-sandbox.ni.htec.rs/login\"\r\n        },\r\n                {\r\n            \"id\": \"2\",\r\n            \"value\": \"Enter a valid email\"\r\n        },\r\n                {\r\n            \"id\": \"3\",\r\n            \"value\": \"Leave password field as empty\"\r\n        },\r\n        {\r\n            \"id\": \"4\",\r\n            \"value\": \"Click on login button\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST testcase Scenario 5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\""
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg5LCJmaXJzdF9uYW1lIjoiTmlrb2xhIiwibGFzdF9uYW1lIjoiTmlrb2xpa2oiLCJlbWFpbCI6Im5pa29sYV9uaWtvbGlrQGhvdG1haWwuY29tIiwiaW1nIjoiaHR0cHM6Ly9odGVjLW9wcy1xYXNhbmRib3guczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vcWFzUHJvZEltZ0NhbmRpZGF0ZS8yODktMTYyNzczODQ3MjM5OSIsImFjdGl2ZSI6dHJ1ZSwiY2FuZGlkYXRlX3NjZW5hcmlvX2lkIjoyOTcsInR5cGUiOjIsImZpcnN0X2xvZ2luIjpmYWxzZSwiaWF0IjoxNjI3NzM5Mzc2LCJleHAiOjE2Mjc3NDI5NzZ9.7feELwMLjQFW4AFNg97aUzVprSFBio6YDQxVHCflH8o",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "origin",
+						"value": "https://qa-sandbox.ni.htec.rs"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://qa-sandbox.ni.htec.rs/new-testcase"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,mk;q=0.7"
+					},
+					{
+						"key": "cookie",
+						"value": "io=qhGEhFoePi0ZXNFXAA9m"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send a invalid request with empty email and password\",\r\n    \"description\": \"The purpose of this test is to validate if we send an invalid request with empty email we cannot login on the Page\",\r\n    \"expected_result\": \"User can't login on the page and an error will be shown (Email is required + Password is required)\",\r\n    \"automated\": true,\r\n    \"test_steps\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"value\": \"Go to qa-sandbox.ni.htec.rs/login\"\r\n        },\r\n                {\r\n            \"id\": \"2\",\r\n            \"value\": \"Leave email field as empty\"\r\n        },\r\n                {\r\n            \"id\": \"3\",\r\n            \"value\": \"Leave password field as empty\"\r\n        },\r\n        {\r\n            \"id\": \"4\",\r\n            \"value\": \"Click on login button\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://qa-sandbox.ni.htec.rs/api/candidate/testcases",
+					"protocol": "https",
+					"host": [
+						"qa-sandbox",
+						"ni",
+						"htec",
+						"rs"
+					],
+					"path": [
+						"api",
+						"candidate",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": ""
+		}
+	]
+}

@@ -15,7 +15,7 @@ public class Tests {
 
     private Gson gson = new Gson();
     private HTECClient htecClient;
-    private String title,description,expected_result,value;
+    private String title,description,expected_result;
     private static List<Integer> listCasesIds = new ArrayList<>();
 
     @Before
