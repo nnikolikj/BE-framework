@@ -64,28 +64,12 @@ public abstract class BaseClient {
         return handleRequest(this.baseUrl + route, HttpMethod.POST, responseType, createHttpEntity(body), args);
     }
 
-    protected <E> ResponseEntity<E> post(String route, Class<E> responseType, Object... args) {
-        return handleRequest(this.baseUrl + route, HttpMethod.POST, responseType, createHttpEntity(), args);
-    }
-
     protected <E> ResponseEntity<E> get(String route, Class<E> responseType, Object... args) {
         return handleRequest(this.baseUrl + route, HttpMethod.GET, responseType, createHttpEntity(), args);
     }
 
     protected <E> ResponseEntity<E> delete(String route, Class<E> responseType, Object... args) {
         return handleRequest(this.baseUrl + route, HttpMethod.DELETE, responseType, createHttpEntity(), args);
-    }
-
-    protected <T, E> ResponseEntity<E> patch(String route, T body, Class<E> responseType, Object... args) {
-        return handleRequest(this.baseUrl + route, HttpMethod.PATCH, responseType, createHttpEntity(body), args);
-    }
-
-    protected <T, E> ResponseEntity<E> put(String route, T body, Class<E> responseType, Object... args) {
-        return handleRequest(this.baseUrl + route, HttpMethod.PUT, responseType, createHttpEntity(body), args);
-    }
-
-    protected void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
     }
 
     public void addHeader(String key, String value) {

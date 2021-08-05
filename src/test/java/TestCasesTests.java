@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Tests {
+public class TestCasesTests {
 
     private Gson gson = new Gson();
     private HTECClient htecClient;

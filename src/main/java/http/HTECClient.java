@@ -20,7 +20,6 @@ public class HTECClient extends BaseClient {
             .password("Test123!")
             .build();
 
-
     public HTECClient() {
         this.baseUrl = HOSTNAME;
         authenticateOnTheSite(postAuthRequestBody);
@@ -53,5 +52,4 @@ public class HTECClient extends BaseClient {
     public ResponseEntity<List<GetCasesResponseBody>> putTestcase(Integer id, String putTestcasePayload) {
         return this.putAndReturnListResponse(TESTCASES_ENDPOINT + "/" + id, putTestcasePayload);
     }
-
 }
